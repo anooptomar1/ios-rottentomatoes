@@ -31,9 +31,10 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     func onRefresh(){
-            let RottenTomatoesURLString = "http://api.rottentomatoes.com/api/public/v1.0/lists/dvds/new_releases.json?page_limit=16&page=\(currentPage)&country=us&apikey=vzmkwz3xmfdk23srbt83yaxj";
-            loadMovies(RottenTomatoesURLString);
-            currentPage++;
+        currentPage++;
+        let RottenTomatoesURLString = "http://api.rottentomatoes.com/api/public/v1.0/lists/dvds/new_releases.json?page_limit=16&page=\(currentPage)&country=us&apikey=vzmkwz3xmfdk23srbt83yaxj";
+        loadMovies(RottenTomatoesURLString);
+        
     }
     
    
