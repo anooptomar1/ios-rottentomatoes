@@ -15,7 +15,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        var currentController = window?.rootViewController;
+        
+        let mainSB = UIStoryboard(name: "Main", bundle: nil);
+        
+        let tabBarController = UITabBarController();
+        //var navController = UINavigationController(rootViewController: currentController!);
+        
+        var movieController = mainSB.instantiateViewControllerWithIdentifier("navBarView") as UINavigationController;
+       var boxOfficeController = mainSB.instantiateViewControllerWithIdentifier("navBarView1") as UINavigationController;
+        
+        let firstImage = UIImage(named:"dvdIcon");
+        let secondImage = UIImage(named: "movieIcon");
+        
+        movieController.tabBarItem = UITabBarItem(title: "DVD", image: firstImage, tag: 1);
+        boxOfficeController.tabBarItem = UITabBarItem(title: "Box Office", image: secondImage, tag: 2);
+        
+        
+        tabBarController.viewControllers = [movieController, boxOfficeController];
+        
+        
+        window?.rootViewController = tabBarController;
+        
         return true
     }
 

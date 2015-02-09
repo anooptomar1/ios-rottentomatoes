@@ -40,11 +40,15 @@ class MovieDetailsViewController: UIViewController {
         
         movieSynopsis.text = movieDictionary?["synopsis"] as NSString;
         movieSynopsis.sizeToFit();
-        synopsisScrollView.contentSize = CGSize(width: UIScreen.mainScreen().bounds.width, height: UIScreen.mainScreen().bounds.height+300);
+        synopsisScrollView.contentSize = CGSize(width: UIScreen.mainScreen().bounds.width, height: UIScreen.mainScreen().bounds.height+100);
         
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
         var nav = self.navigationController?.navigationBar;
         
-        nav?.tintColor = UIColor.blackColor();
+        nav?.tintColor = UIColor.yellowColor();
         nav?.barStyle = UIBarStyle.Black;
         nav?.alpha = 0.5;
     }
